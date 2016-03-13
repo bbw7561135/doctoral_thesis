@@ -1,0 +1,98 @@
+% !TeX program = pdflatex
+
+\documentclass{utthesis}
+
+\usepackage{lipsum} % Dummy text for examples
+\usepackage{graphicx}
+\usepackage[hidelinks,pagebackref]{hyperref} % Handy for links, can comment for plain PDF
+
+\UTyear=2016
+
+\makeindex
+
+\graphicspath{{./figures/}}
+
+\begin{document}
+
+\author{Jacob Alexander Hummel} 
+\title{The First Supernovae: Detectability and Impact on Early Star Formation} 
+\date{Revised: \today}
+
+\UTcopyrightlegend % Optional
+
+\begin{UTcommittee}
+\UTaddsupervisor{Volker Bromm}
+\UTaddcommittee{J. Craig Wheeler}
+\UTaddcommittee{Milos Milosavljevic}
+\UTaddcommittee{Steven Finkelstein}
+\end{UTcommittee}
+
+\UTtitlepage{B.S.}{May}
+
+\frontmatter
+
+\setcounter{page}{4}
+
+%\include{acknowledgements}
+%\include{preface}
+
+\begin{UTabstract}{Volker Bromm}
+\lipsum[1]
+\end{UTabstract}
+
+
+% add . to include section numbers (non-standard)
+\tableofcontents
+%\tableofcontents.
+
+\listoffigures
+
+\mainmatter
+
+\chapter{Start}
+\lipsum[3]
+\section{One}
+\subsection{Mini}
+\section{Two}
+\subsection{Miny}
+\subsubsection{Mo}
+\section{Three}
+\section{This is very very very very very very long to test the guideline for wrapping in the table of contents}
+
+\chapter{More}
+\lipsum[3]
+\begin{figure}
+This is a figure.
+\caption[This]{This is a caption.}
+\end{figure}
+
+\chapter{Finishing}
+\lipsum[3]
+
+\begin{appendix}
+
+\chapter{First}
+\lipsum[3]
+
+\chapter{Second}
+\section{Part one}
+\lipsum[3]
+\section{Part two}
+\begin{figure}
+This is a figure.
+\caption[That]{This is also a caption.}
+\end{figure}
+
+\end{appendix}
+
+\backmatter
+
+\printindex
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\chapter*{Bibliography}
+\lipsum[2]
+
+\end{document}
