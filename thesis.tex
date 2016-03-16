@@ -848,10 +848,10 @@ Note that X-rays cause significantly more heating per ionisation event than CRs,
 \end{center}
 \end{figure}
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=.8\textwidth]{figures/temp/temp}
-\includegraphics[width=.8\textwidth]{figures/temp/temp_halo2}
+\includegraphics[width=\columnwidth]{figures/temp/temp}
+\includegraphics[width=\columnwidth]{figures/temp/temp_halo2}
 \caption{\label{fig:temp}
 Mass-weighted temperature-density distribution of the gas collapsing into Halo 1 (top) and Halo 2 (bottom), shown just prior to sink formation. 
 Each panel shows the behaviour of gas collapsing under a CR background of a given strength. 
@@ -859,7 +859,7 @@ In each case, the behaviour of the gas in the $\ucr=0$ case is reproduced for co
 Note that the gas invariably proceeds to collapse, and converges toward a similar thermodynamic path as it approaches sink formation densities, regardless of the CR background strength.%
 }
 \end{center}
-\end{figure*}
+\end{figure}
 
 Accounting for this attenuation of the CR background and following the treatment of \citet{StacyBromm2007} and \citet{InayoshiOmukai2011}, the cosmic ray heating rate $\Gamma_{\mathrm \small CR}$ and ionisation rate $k_{\mathrm \small CR}$ are given by
 \begin{equation}
@@ -942,9 +942,9 @@ As a result, the thermal behaviour of the gas increasingly resembles that seen i
 To wit, by the time we form sink particles at  $10^{12}\cc$ the thermodynamic state of the gas is remarkably similar, even as we vary the CR background strength by five orders of magnitude.
 This convergence under a wide range of environmental conditions is similar to that seen in the presence of both an X-ray background \citep{Hummeletal2015} and DM--baryon streaming \citep{StacyBrommLoeb2011a,Greifetal2011b}.
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=.95\textwidth]{figures/structure/structure}
+\includegraphics[width=\columnwidth]{figures/structure/structure}
 \caption{\label{fig:structure}
 Simulation structure for both Halo 1 (top) and Halo 2 (bottom) as seen in the final output, $5000\yr$ after the first sink forms.  
 Shown is a density projection of the minihalo environment on progressively smaller scales for both the $\ucr=0$ and $\ucr=10^5\,u_0$ simulations, as labelled.  
@@ -956,9 +956,9 @@ Not only do CRs heat and smooth the filamentary gas, the expedited collapse indu
 As a result, the dynamical environment in which the sink particles form varies significantly between simulations.%
 }
 \end{center}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
 \includegraphics[width=.49\textwidth]{figures/sink_masses/sink_masses_halo1}
 \includegraphics[width=.49\textwidth]{figures/sink_masses/sink_masses_halo2}
@@ -970,7 +970,7 @@ The growth of the sinks in the corresponding $\ucr=0$ is shown in grey in the ba
 There are no apparent trends with increasing $\ucr$ -- neither in typical sink mass nor in the number of fragments formed.%
 }
 \end{center}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Expedited Collapse}
 \label{sec:expedited_collapse}
@@ -982,9 +982,9 @@ Low density filamentary gas is heated and prevented from collapsing, reducing th
 Gas above a $\ucr$-dependent density threshold on the other hand experiences enhanced cooling and thus has its collapse expedited.
 As a result, the dynamical environment in which the first sink particles form varies significantly depending on the strength of the CR background.
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=1\textwidth]{figures/disks/disks}
+\includegraphics[width=\columnwidth]{figures/disks/disks}
 \caption{\label{fig:disks} 
 Density projection of the central $20\,000\au$ of each simulation $5000\yr$ after the formation of the first sink particle.
 Upper panel: Halo 1; lower panel: Halo 2.
@@ -993,7 +993,7 @@ In each panel the accretion disk formed in the absence of any CR background is s
 Note the broad variation in both disc structure and spatial extent.%
 }
 \end{center}
-\end{figure*}
+\end{figure}
 
 \subsection{Star Formation}
 \subsubsection{Protostellar Fragmentation and Growth}
@@ -1012,15 +1012,15 @@ As seen in Figure \ref{fig:structure}, expediting the initial collapse results i
 Given the lack of any apparent trends with increasing $\ucr$, this suggests the final stages of the collapse are influenced more by small-scale turbulence than the strength of the CR background.
 While CRs may indeed alter the susceptibility of the disk to fragmentation, any such behaviour is masked by variations in the collapse history between simulations.
 
-\begin{figure*}
+\begin{figure}
 \begin{center}
-\includegraphics[width=1\textwidth]{figures/binned_T_Mbe/binned_T_Mbe}
+\includegraphics[width=\columnwidth]{figures/binned_T_Mbe/binned_T_Mbe}
 \caption{\label{fig:Mbe}
 Density-binned average temperature (top) and Bonnor-Ebert mass (bottom) for Halo 1 (left) and Halo 2 (right) for all CR background strengths, as labelled.
 Overlaid on each panel are the one-zone calculations of \citet{StacyBromm2007}, which only tracked the gas evolution up to densities of $10^6\cc$, insufficient to observe the $\ucr$-independent convergence in the thermodynamic state of the gas as it proceeds to runaway collapse.%
 }
 \end{center}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Characteristic Mass}
 
@@ -1075,21 +1075,6 @@ Finally, while the characteristic mass---and thus, ionising output---of Pop III 
 \chapter{Finishing}
 \lipsum[3]
 
-\begin{appendix}
-
-\chapter{First}
-\lipsum[3]
-
-\chapter{Second}
-\section{Part one}
-\lipsum[3]
-\section{Part two}
-\begin{figure}
-This is a figure.
-\caption[That]{This is also a caption.}
-\end{figure}
-
-\end{appendix}
 
 \backmatter
 
@@ -1098,7 +1083,7 @@ This is a figure.
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Bibliography}
-\chapter*{Bibliography}
+%\chapter*{Bibliography}
 \bibliography{biblio}
 
 \end{document}
