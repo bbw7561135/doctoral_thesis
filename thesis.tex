@@ -1159,7 +1159,7 @@ encounters this instability several times until the mass of the helium
 core drops below $\sim$40\msun, after which the star can proceed to
 silicon burning and eventually undergo core-collapse.
 
-With the upcoming launch of the {\it James Webb Space Telescope}
+With the upcoming launch of the \textit{James Webb Space Telescope}
 (JWST) we will be able to probe the epoch of first light in
 unprecedented detail.  While the first stars themselves are unlikely
 to be visible (e.g, \citealt{BrommKudritzkiLoeb2001,
@@ -1234,7 +1234,7 @@ JWST to detect PISNe at high redshift in Section 3, and our
 conclusions are gathered in Section 4.  Throughout this paper we adopt
 a $\Lambda$CDM model of hierarchical structure formation, using
 cosmological parameters consistent with the WMAP 5-year results
-\citep{Komatsu2009}: $\Omega_{\rm m} = 0.258$; $\Omega_{\Lambda}=0.742$;
+\citep{Komatsu2009}: $\Omega_{\mathrm m} = 0.258$; $\Omega_{\Lambda}=0.742$;
 $\Omega_b=0.0441$; $h=0.719$; $n_s=0.96$; $\sigma_8=0.796$.
 
 \section{The PISN Rate}
@@ -1271,7 +1271,7 @@ place a robust upper limit on the PISN rate.
 The introduction of cosmic feedback has the potential to significantly
 alter this picture.  Chemical enrichment induces a transition to lower
 mass Pop~II star fomation, and thus always has a negative effect on
-the PISN rate.  Radiative feedback---especially \hh-dissociating
+the PISN rate.  Radiative feedback---especially \htwo-dissociating
 Lyman-Werner (LW) feedback---has a more complicated effect.  The
 destruction of molecular hydrogen by LW photons removes the ability of
 pristine gas to cool effectively. This suppresses star formation, and
@@ -1293,15 +1293,15 @@ the observable rate for each scenario.
 \subsection{No-Feedback Limit}
 In order to determine an upper limit to the PISN rate, we assume
 exactly one PISN per minihalo, forming as soon as the virial
-temperature of the minihalo exceeds the minimum value $T_{\rm crit}$
+temperature of the minihalo exceeds the minimum value $T_{\mathrm crit}$
 required for gas to cool and collapse to high densities. We set this
 to 2200 K based on the results of simulations (see
 \RefSec{lymanWerner} for details).  The corresponding critical mass
 for collapse is given by
 \begin{equation}
   \label{mcriteq}
-    M_{\rm crit} = 10^6\msun
-    \left( \frac{T_{\rm crit}}{10^3 \,{\rm K}}\right)^{3/2} 
+    M_{\mathrm crit} = 10^6\msun
+    \left( \frac{T_{\mathrm crit}}{10^3 \,{\mathrm K}}\right)^{3/2} 
    \left( \frac{1+z}{10}\right)^{-3/2},
 \end{equation}
 where we assume a mean molecular weight of $\mu=1.22$, appropriate for
@@ -1313,10 +1313,10 @@ formation \citep{PressSchechter1974} to estimate the number density
 $n_{\textsc{ps}}$ of minihalos of mass $M$ at redshift $z$, given by
 \begin{equation}
 n_{\textsc{ps}} (M,z) = \sqrt{\frac{2}{\pi}}
-\frac{\rho_{\rm m}}{M}\left|\frac{d\ln \,\sigma_{0}(M)}{d\ln \,M}
+\frac{\rho_{\mathrm m}}{M}\left|\frac{d\ln \,\sigma_{0}(M)}{d\ln \,M}
 \right|\nu_{c,z} \,e^{-\nu_{c,z}^2 /2},
 \end{equation}
-where $\rho_{\rm m}$ is the background matter density, $\sigma_{z}(M)$
+where $\rho_{\mathrm m}$ is the background matter density, $\sigma_{z}(M)$
 is the standard deviation of overdensities $\delta$ of mass $M$ at
 redshift $z$, and $\nu_{c,z} = \delta_c / \sigma_{z}(M)$, where
 $\delta_c$ is the critical overdensity for collapse; the value used
@@ -1325,7 +1325,7 @@ here is $\delta_c =1.686$.
 Converting from redshift to cosmic time $t(z)$, where
 \begin{equation} 
 t(z) = \frac{1}{H_0}
-\int_z^{\infty}\frac{dz'}{(1+z')\sqrt{\Omega_{\rm m} (1+z')^3 + \Omega_{\Lambda}}} ,
+\int_z^{\infty}\frac{dz'}{(1+z')\sqrt{\Omega_{\mathrm m} (1+z')^3 + \Omega_{\Lambda}}} ,
 \end{equation} 
 a first order estimate for the PISN formation rate as a function
 of redshift is given by $\dot{n}_{\textsc{pisn}}\equiv
@@ -1339,7 +1339,7 @@ use the expression for the formation rate derived by
 \citet{Sasaki1994}\footnote{See \citet{Mitraetal2011}
   for a discussion of the validity of this expression.}:
 \begin{equation}
-\dot{n}_{+}(z) = \frac{\dot{D}}{D} n_{\textsc{ps}}(M_{\rm crit},z)
+\dot{n}_{+}(z) = \frac{\dot{D}}{D} n_{\textsc{ps}}(M_{\mathrm crit},z)
 \frac{\delta_c^2}{\sigma^2_0(M) D^2},
 \end{equation}
 where $D(z)$ is the growth factor.  The PISN rate
@@ -1363,7 +1363,7 @@ feedback mechanisms can be represented with distinct efficiency
 factors $\eta(z)$, such that the true PISN rate will be given by
 \begin{equation}
   \dot{n}_{\textsc{pisn}}(z) = 
-  \eta_{\rm chem}(z) \; \eta_{\rm rad}(z) \; \dot{n}_{+}(z).
+  \eta_{\mathrm chem}(z) \; \eta_{\mathrm rad}(z) \; \dot{n}_{+}(z).
   \label{pisnrate1}
 \end{equation}
 We must include these effects in order to derive a realistic estimate
@@ -1426,14 +1426,14 @@ of 2350 (484)\msun. This allows halos with masses $\gtrsim 2
 \times 10^5$\msun, to be resolved with $\gtrsim 100$ dark
 matter particles.
 
-The first of the simulations we employ is similar to simulation {\it
-  Z4} presented in \citet{PawlikMilosavljevicBromm2011}, and follows
+The first of the simulations we employ is similar to simulation \textit{Z4} 
+presented in \citet{PawlikMilosavljevicBromm2011}, and follows
 the non-equilibrium chemistry and cooling of the primordial atomic and
 molecular gas, including star formation but not the associated
 feedback.  It thus provides a useful reference against which the
 effects of LW feedback can be discussed. Here, gas particles were
-turned stochastically into star particles at densities $n_{\rm H} >
-500 \,{\rm cm}^{-3}$ on a dynamical time scale. Star particles were
+turned stochastically into star particles at densities $n_{\mathrm H} >
+500 \,{\mathrm cm}^{-3}$ on a dynamical time scale. Star particles were
 considered simple stellar populations using the zero-metallicity
 top-heavy IMF models from \citet{Schaerer2003}.  Henceforth this
 simulation is referred to as Simulation A.
@@ -1452,8 +1452,8 @@ The efficiency of LW feedback, $\eta_{\textsc{lw}}$, can be expressed
 as the ratio of the formation rate of minihalos at the critical mass
 with LW feedback to that without:
 \begin{equation}
-  \eta_{\textsc{lw}}(z) = \frac{ \dot{n}_{+}(M_{\rm crit, \textsc{lw}},
-    z) }{ \dot{n}_{+}(M_{\rm crit}, z)}.
+  \eta_{\textsc{lw}}(z) = \frac{ \dot{n}_{+}(M_{\mathrm crit, \textsc{lw}},
+    z) }{ \dot{n}_{+}(M_{\mathrm crit}, z)}.
 \end{equation}
 This requires determining the factor $f_{\textsc{lw}}(z)$ by which LW
 feedback increases the critical mass for star formation.  We do this
@@ -1481,17 +1481,17 @@ $f_{\textsc{lw}}$ is well fit by a functional form of
  &+ 6. 23\times10^{5},
  \end{split}
 \end{equation}
-for $z\geq10$, where ${\rm erf}(z)$ is the error function.
-$M_{\rm crit, \textsc{lw}}$ is then given by
+for $z\geq10$, where ${\mathrm erf}(z)$ is the error function.
+$M_{\mathrm crit, \textsc{lw}}$ is then given by
 \begin{equation}
   \label{mcritlweq}
-M_{\rm crit, \textsc{lw}} = f_{\textsc{lw}} \,M_{\rm crit},
+M_{\mathrm crit, \textsc{lw}} = f_{\textsc{lw}} \,M_{\mathrm crit},
 \end{equation}
 shown in \RefFig{lwFeedback}b.  When the virial temperature of the
 halo reaches $10^4\,$K, cooling via atomic hydrogen becomes efficient
 and molecular hydrogen becomes unimportant.  Once this threshold is
 reached, LW feedback cannot further suppress star formation, and
-$M_{\rm crit, \textsc{lw}}$ holds steady at a constant virial
+$M_{\mathrm crit, \textsc{lw}}$ holds steady at a constant virial
 temperature of $10^4\,$K.  This is reflected as an increase in the
 formation rate of halos affected only by LW feedback, as the formation
 rate of atomic cooling halos is increasing prior to $z=10$.  This
@@ -1499,7 +1499,7 @@ transition can be clearly seen in \RefFig{fbrate}, marked by a sudden
 jump in the halo formation rate.  As ionizing photons cannot easily
 escape the immediate vicinity of the star that produced them, their
 impact on neighboring halos is small compared to that of LW photons at
-the highest redshifts.  We thus set $\eta_{\rm rad} \simeq
+the highest redshifts.  We thus set $\eta_{\mathrm rad} \simeq
 \eta_{\textsc{lw}}$ for simplicity.  This approximation becomes
 increasingly unphysical close to the epoch of reionization at
 $z\sim10$.
@@ -1519,7 +1519,7 @@ $z\sim10$.
 \subsubsection{Chemical Feedback}
 The process of chemical enrichment is another crucial factor for
 determining the PISN rate.  Gas that has been enriched beyond a
-critical metallicity of $Z_{\rm crit} \sim 10^{-4}$\zsun will
+critical metallicity of $Z_{\mathrm crit} \sim 10^{-4}$\zsun will
 no longer form Pop~III stars \citep{BrommKudritzkiLoeb2001,
   Schneideretal2002, BrommLoeb2003}, and hence no PISNe.  Chemical
 feedback can thus be represented as the fraction of halos forming from
@@ -1531,14 +1531,14 @@ inhomogeneously, enriching the IGM before penetrating into denser
 regions \citep{Scannapiecoetal2005, Greifetal2007,
   TornatoreFerraraSchneider2007,WiseAbel2008, Maioetal2010}.
 
-In modeling $\eta_{\rm chem}$, we use the results of
+In modeling $\eta_{\mathrm chem}$, we use the results of
 \citet{FurlanettoLoeb2005}.  Their semi-analytic treatment of SN winds
 utilizes the \citet{Sedov1959} solution for an explosion expanding
-into a uniform medium and yields a probability function $P_{\rm
+into a uniform medium and yields a probability function $P_{\mathrm
   pristine}(z)$ that the gas in a newly formed halo is pristine.  This
 is plotted in Figure 2 of their paper for various strengths of
 chemical feedback.  We identify this quantity as the fraction of newly
-collapsed halos that have been polluted with metals, $\eta_{\rm
+collapsed halos that have been polluted with metals, $\eta_{\mathrm
   chem}$.  Given the recent detection of pristine gas at $z = 3$ by
 \citet{FumagalliOMearaProchaska2011}, we choose the weakest feedback
 scenario presented by \citet{FurlanettoLoeb2005} among the scenarios
@@ -1553,14 +1553,14 @@ likelihood that multiple massive stars form per halo, offseting the
 negative effects of LW radiation considered above.  We quantify this
 by positing that the number of PISNe produced per halo at redshift $z$
 is given by the ratio of the critical mass in the presence of LW
-feedback $M_{\rm crit, \textsc{lw}}$ to the critical mass in the
-no-feedback case $M_{\rm crit}$.  For example, at $z=17$, $M_{\rm
-  crit, \textsc{lw}} / M_{\rm crit} \approx 1.4$, so for every 10
+feedback $M_{\mathrm crit, \textsc{lw}}$ to the critical mass in the
+no-feedback case $M_{\mathrm crit}$.  For example, at $z=17$, $M_{\mathrm
+  crit, \textsc{lw}} / M_{\mathrm crit} \approx 1.4$, so for every 10
 pristine halos that form, 14 PISNe are produced.  In this case the
 PISN rate is modified such that
 \begin{equation}
-\dot{n}_{\textsc{pisn}}(z) = \frac{M_{\rm crit, \textsc{lw}}(z)}{M_{\rm crit}(z)} \;
-\eta_{\rm chem}(z) \; \eta_{\rm rad}(z) \; \dot{n}_{+}(z).
+\dot{n}_{\textsc{pisn}}(z) = \frac{M_{\mathrm crit, \textsc{lw}}(z)}{M_{\mathrm crit}(z)} \;
+\eta_{\mathrm chem}(z) \; \eta_{\mathrm rad}(z) \; \dot{n}_{+}(z).
 \label{pisnrate2}
 \end{equation}
 The resulting enhanced PISN rate can be seen in \RefFig{fbrate}b.  In
@@ -1588,25 +1588,25 @@ The observed PISN rate per unit time per unit redshift per unit solid
 angle is given by
 \begin{equation}
   \begin{split}
-    \frac{dN}{dt_{\rm obs}\,dz\,d\Omega} &= \frac{dN}{dt_{\rm
+    \frac{dN}{dt_{\mathrm obs}\,dz\,d\Omega} &= \frac{dN}{dt_{\mathrm
         obs}\,dV} \, \frac{dV}{dz d\Omega}
-    \\ &=\frac{1}{(1+z)}\frac{dN}{dt_{\rm em}\,dV} \;r^2
+    \\ &=\frac{1}{(1+z)}\frac{dN}{dt_{\mathrm em}\,dV} \;r^2
     \frac{dr}{dz}.
  \end{split}
 \end{equation}
-Cosmological time dilation between $t_{\rm obs}$ and $t_{\rm em}$ is
+Cosmological time dilation between $t_{\mathrm obs}$ and $t_{\mathrm em}$ is
 accounted for by the $(1+z)$ in the denominator; $dV$ is the
 comoving volume element and $r(z)$ is the comoving distance to
 redshift $z$ given by
 \begin{equation}
-r(z) = \frac{c}{H_0}\int_0^z \frac{dz'}{\sqrt{\Omega_{\rm m} (1+z')^3 +
+r(z) = \frac{c}{H_0}\int_0^z \frac{dz'}{\sqrt{\Omega_{\mathrm m} (1+z')^3 +
     \Omega_{\Lambda}}},
 \end{equation}
 where $c/H_0$ is the Hubble distance.  With the assumptions outlined
 above, we estimate the PISN rate in events per year per comoving
 Mpc$^3$ in the source rest frame:
 \begin{equation}
-\frac{dN}{dt_{\rm em}\,dV} = \dot{n}_{\textsc{pisn}}(z).
+\frac{dN}{dt_{\mathrm em}\,dV} = \dot{n}_{\textsc{pisn}}(z).
 \end{equation}
 These results---shown in \RefFig{obsrate}---are in reasonable
 agreement with previous work; our no-feedback limit of one PISN per
@@ -1711,9 +1711,9 @@ an apparent decrease in the radius of the PISN remnant.
 \caption{\footnotesize Left: Lightcurves for the
   \citet{KasenWoosleyHeger2011} R250 (top) and B200 (bottom) models as
   they would be observed by JWST's F444W NIRCam filter at $z = 5, 10,
-  15, 20, 25 \:{\rm and}\: 30$. The flux limits for a $10^6\,$s
+  15, 20, 25 \:{\mathrm and}\: 30$. The flux limits for a $10^6\,$s
   (dashed line) and $10^4\,$s (dotted line) exposure are shown for
-  reference.  Right: The visibility time $\Delta t_{\rm vis}$ in years
+  reference.  Right: The visibility time $\Delta t_{\mathrm vis}$ in years
   for R250 (top) and B200 (bottom) as a function of redshift for each
   of the NIRcam wide filters. Note that the axes are scaled
   independently.  Similar plots for models He100 and R175 are included
@@ -1723,11 +1723,11 @@ an apparent decrease in the radius of the PISN remnant.
 \end{figure*} 
 
 With this information we can then calculate the specific flux
-$F_{\lambda, \rm em}$ in the rest frame and|accounting for redshift
+$F_{\lambda, \mathrm em}$ in the rest frame and|accounting for redshift
 and cosmological dimming|in the observer's frame for a source at
 redshift $z$:
 \begin{equation}
-F_{\lambda, \rm obs}(T,R_{\textsc{sn}}, z) = \pi
+F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) = \pi
 \left[\frac{R_{\textsc{sn}}}{D_L(z)}\right]^2
 \frac{B_{\lambda'}(T)}{1+z}.
 \end{equation}
@@ -1736,8 +1736,8 @@ luminosity distance $D_L = (1+z) r(z)$ accounts for cosmological
 dimming.  Convolving this spectrum with a filter function
 $\phi_\textsc{x}(\lambda)$ yields the observable flux in filter~X:
 \begin{equation}
-F_{\rm obs, \textsc{x}} = \int_{0}^{\infty} \phi_\textsc{x}(\lambda)
-F_{\lambda, \rm obs}(T,R_{\textsc{sn}}, z) d\lambda.
+F_{\mathrm obs, \textsc{x}} = \int_{0}^{\infty} \phi_\textsc{x}(\lambda)
+F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) d\lambda.
 \end{equation}
 
 \subsection{Visibility}
@@ -1758,7 +1758,7 @@ cm$^{-2}$ for a $10^4\,$s exposure are also shown for reference.  We
 see that the brightest explosions (R250) would be visible to beyond
 $z\sim25$, but are never so bright as to be detectable with current
 generation telescopes.  This is consistent with the non-detection by
-\citet{Frostetal2009} in a search of the {\it Spitzer}/IRAC Dark Field
+\citet{Frostetal2009} in a search of the \textit{Spitzer}/IRAC Dark Field
 for possible Pop~III PISN candidates.
 
 To account for absorption of flux by neutral hydrogen along the line
@@ -1774,7 +1774,7 @@ At low redshifts the duration of the lightcurve presented in
 \citet{KasenWoosleyHeger2011} is not quite long enough for the
 observed flux to reach the sensitivity limit; we extend it to the
 limit by extrapolating assuming a power-law scaling.  The visible time
-$\Delta t_{\rm vis}$ is then simply given by the time the lightcurve
+$\Delta t_{\mathrm vis}$ is then simply given by the time the lightcurve
 is above the filter sensitivity limit.  Shown in \RefFig{visibility}
 are the visibility times as a function of redshift for each of the
 NIRcam filters.  
@@ -1800,15 +1800,15 @@ NIRcam filters.
  \end{center}
 \end{figure*} 
 \subsection{The Observable Number}
- With this estimate for $\Delta t_{\rm vis}$, we may finally calculate
+ With this estimate for $\Delta t_{\mathrm vis}$, we may finally calculate
  the observable number of PISNe on the sky, given by the product of
  the PISN rate at $z$, as seen in the observer frame, and the time a
- PISN at $z$ is visible, $\Delta t_{\rm vis}$. This yields an estimate
+ PISN at $z$ is visible, $\Delta t_{\mathrm vis}$. This yields an estimate
  for the number of PISNe visible on the sky at any given time per unit
  redshift per unit solid angle:
 \begin{equation} 
-\frac{dN}{dz\,d\Omega} \simeq \frac{dN}{dt_{\rm
-    obs}\,dz\,d\Omega}\,\Delta t_{\rm vis}.
+\frac{dN}{dz\,d\Omega} \simeq \frac{dN}{dt_{\mathrm
+    obs}\,dz\,d\Omega}\,\Delta t_{\mathrm vis}.
 \end{equation}
 \RefFig{obsnumber} shows the number of PISNe per JWST field of view
 (FoV) above redshift $z$ in a $10^6\,$s exposure for all three
@@ -1976,7 +1976,7 @@ resulting exposure time is no longer sufficient to detect PISNe.  The
 optimal search strategy then will be to cover as large an area as
 possible, going only as deep as necessary, possibly in a similar
 manner to the ongoing Brightest of Reionizing Galaxies survey with the
-{\it Hubble Space Telescope} \citep{Trentietal2011, Bradleyetal2012}.
+\textit{Hubble Space Telescope} \citep{Trentietal2011, Bradleyetal2012}.
 
 
 
@@ -2029,11 +2029,11 @@ totalling greater than $10^7\,$s.
               \caption{\footnotesize Left: Lightcurves for the
                 \citet{KasenWoosleyHeger2011} He100 (top) and R175
                 (bottom) models as they would be observed by JWST's
-                F444W NIRCam filter at $z = 5, 10, 15, 20, 25 \:{\rm
+                F444W NIRCam filter at $z = 5, 10, 15, 20, 25 \:{\mathrm
                   and}\: 30$. The flux limits for a $10^6\,$s (dashed
                 line) and $10^4\,$s (dotted line) exposure are shown
                 for reference.  Right: The visibility time $\Delta
-                t_{\rm vis}$ in years for He100 (top) and R175
+                t_{\mathrm vis}$ in years for He100 (top) and R175
                 (bottom) as a function of redshift for each of the
                 NIRcam wide filters. Note that the axes are scaled
                 independently.}
