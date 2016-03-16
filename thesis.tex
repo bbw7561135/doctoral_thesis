@@ -29,6 +29,7 @@
 \newcommand{\rsun}{\ensuremath{\,\mathrm{R}_{\odot}}\xspace}
 \newcommand{\zsun}{\ensuremath{\,\mathrm{Z}_{\odot}}\xspace}
 \newcommand{\kms}{\ensuremath{\,\mathrm{km}\,\mathrm{s}^{-1}\xspace}}
+\newcommand{\kpc}{\ensuremath{\,\mathrm{kpc}}\xspace}
 \newcommand{\pc}{\ensuremath{\,\mathrm{pc}}\xspace}
 \newcommand{\au}{\ensuremath{\,\mathrm{AU}}\xspace}
 \newcommand{\Mpc}{\ensuremath{\,\mathrm{Mpc}}\xspace}
@@ -79,6 +80,8 @@
 \newcommand{\etherm}{\ensuremath{{E}_{\mathrm{th}}}\xspace}
 \newcommand{\ekin}{\ensuremath{{E}_{\mathrm{kin}}}\xspace}
 \newcommand{\erot}{\ensuremath{{E}_{\mathrm{rot}}}\xspace}
+\newcommand{\ucr}{\ensuremath{{u}_{\textsc{cr}}}\xspace}
+\newcommand{\ucrz}{\ensuremath{{u}_{\textsc{cr}}(z)}\xspace}
 \newcommand{\uxr}{\ensuremath{{u}_{\textsc{xr}}}\xspace}
 \newcommand{\uxrz}{\ensuremath{{u}_{\textsc{xr}}(z)}\xspace}
 \newcommand{\gxr}{\ensuremath{\Gamma_{\textsc{xr}}}\xspace}
@@ -98,6 +101,7 @@
 \newcommand{\tcoolhtwo}{t_{\mathrm{cool,H}_2}}
 \newcommand{\tcoolhd}{t_{\mathrm{cool,HD}}}
 %Cosmology
+\newcommand{\Dhubble}{D_{\mathrm{H}}}
 \newcommand{\omegab}{\Omega_{\mathrm{b}}}
 \newcommand{\omegal}{\Omega_{\Lambda}}
 \newcommand{\omegam}{\Omega_{\mathrm{m}}}
@@ -345,7 +349,7 @@ where $\rho_0 = 2.5\times10^{-30}\,{\mathrm g}\cc$ is the average matter density
 \end{equation}
 where we have normalised to typical minihalo values.  
 
-Prior to minihalo virialisation, gas densities are relatively low, such that attenuation of the CXB as it penetrates the minihalo is negligible (see \RefFig{fig:khrates}). Given this, \gxr
+Prior to minihalo virialisation, gas densities are relatively low, such that attenuation of the CXB as it penetrates the minihalo is negligible (see \RefFig{fig:khratesXR}). Given this, \gxr
 is related to the intensity of the CXB as follows:
 \begin{equation}
 \gxr = 4\pi n \int_{\nu_{\mathrm min}}^{\nu_{\mathrm max}} \jxrvz \sigma_{\nu}
@@ -406,13 +410,13 @@ Here we use the standard expressions for the photoionisation cross sections $\si
 \Omega_{\mathrm \small pole} = \int_0^{2\pi}{\mathrm d}\phi \int_0^{\pi/4}{\mathrm sin}\theta \,{\mathrm d}\theta
 						 = 1.84\,{\mathrm sr}.
 \end{equation}
-Accounting for this attenuation and incorporating the cosmic X-ray background described in Section \ref{HMXB}, the resulting ionisation and heating rates for the $\jxr=J_0$ case at $z=25$ as a function of total number density are shown in Figure \ref{fig:khrates}.
+Accounting for this attenuation and incorporating the cosmic X-ray background described in Section \ref{HMXB}, the resulting ionisation and heating rates for the $\jxr=J_0$ case at $z=25$ as a function of total number density are shown in Figure \ref{fig:khratesXR}.
 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=\columnwidth]{figures/khrates/khrates}
-\caption{\label{fig:khrates}
+\includegraphics[width=\columnwidth]{figures/khrates/khratesXR}
+\caption{\label{fig:khratesXR}
 X-ray ionisation and heating rates for \HI, \HeI and \HeII as a function of total number density for the $\jxr=J_0$ case at $z=25$. In both panels, the solid blue, dashed green, and dash-dotted red lines denote \HI, \HeI, and \HeII, respectively.  The grey lines in each style demonstrate the expected rates in the absence of X-ray self-shielding for that species.  \HI dominates both ionisation and heating when the relative abundances of these species are accounted for, and we see that X-rays penetrating the minihalo experience significant attenuation above densities of $n\sim10^6\cc$.}
 \end{center}
 \end{figure}
@@ -514,7 +518,7 @@ After the minihalo virialises, the gas continues to collapse in accordance with 
 
 We find that X-ray heating dominates at low densities in all cases, while above $n\sim10^2\cc$ the additional cooling catalysed by X-ray ionisation exceeds it; the precise density at which this transition occurs depends on the strength of the CXB.  This enhanced cooling significantly impacts the subsequent evolution of the gas as it collapses to high densities; the minimum temperature of the gas in the loitering phase approaches the CMB floor as $\jxr$ increases, and---in the unshielded simulations---remains cooler than the $\jxr=0$ case in all later stages of the collapse. This allows the gas to more easily fulfil the Jeans criterion and thus collapse sooner, as demonstrated by \RefFig{fig:collapse}.
 
-When shielding is properly accounted for, the gas becomes optically thick to X-rays as it exits the loitering phase and proceeds to runaway collapse (see \RefFig{fig:khrates}).  In the absence of continued X-ray ionisation, the free electron fraction decays, re-converging with that of the $\jxr=0$ case.  Consequently, the thermodynamic behaviour of the gas at high densities in the shielded simulations is remarkably similar, even as we vary the CXB strength by several orders of magnitude as shown in Figure \ref{Tdens}. This convergence under a wide range of X-ray backgrounds is similar to the behaviour noted by \citet{StacyBrommLoeb2011a} and \citet{Greifetal2011b} in the presence of dark matter--baryon streaming, though we observe an earlier---rather than a later---collapse.
+When shielding is properly accounted for, the gas becomes optically thick to X-rays as it exits the loitering phase and proceeds to runaway collapse (see \RefFig{fig:khratesXR}).  In the absence of continued X-ray ionisation, the free electron fraction decays, re-converging with that of the $\jxr=0$ case.  Consequently, the thermodynamic behaviour of the gas at high densities in the shielded simulations is remarkably similar, even as we vary the CXB strength by several orders of magnitude as shown in Figure \ref{Tdens}. This convergence under a wide range of X-ray backgrounds is similar to the behaviour noted by \citet{StacyBrommLoeb2011a} and \citet{Greifetal2011b} in the presence of dark matter--baryon streaming, though we observe an earlier---rather than a later---collapse.
 
 \subsubsection{Collapse Suppression}
  \label{suppression}
@@ -833,8 +837,8 @@ where
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=\columnwidth]{figures/khrates/khrates}
-\caption{\label{fig:khrates}
+\includegraphics[width=\columnwidth]{figures/khrates/khratesCR}
+\caption{\label{fig:khratesCR}
 Ionisation and heating rates as a function of total gas number density for both a cosmic ray and an X-ray background at $z=25$. 
 In both panels, the solid blue lines denote the rate for our fiducial CR background, $u_0$. The solid red lines show the fiducial X-ray rates from \citet{Hummeletal2015}, while the dashed grey lines demonstrate the expected rates in the absence of gas self-shielding.  
 The dash-dotted blue (red) lines mark the highest-intensity CR (X-ray) heating and ionisation rates investigated. 
@@ -875,7 +879,7 @@ While CRs lose about $50\ev$ per interaction, only about $6\ev$ of that goes tow
 Here we assume the incident CR background is composed solely of protons, and all interactions occur with hydrogen only.  
 While this neglects the slight difference in average CR energy loss per interaction for hydrogen ($36\ev$; \citealt{BakkerSegre1951}) as compared to helium ($40\ev$; \citealt{WeissBernstein1956}), the resulting error in the employed heating and ionisation rates is sufficiently small for our purposes (see \citealt{JascheCiardiEnsslin2007} for a more rigorous treatment). 
 
-The resulting heating and ionisation rates for both the $\ucr=u_0$ and $10^5\,u_0$ cases are shown in Figure \ref{fig:khrates}, along with the expected rates in the absence of attenuation.
+The resulting heating and ionisation rates for both the $\ucr=u_0$ and $10^5\,u_0$ cases are shown in Figure \ref{fig:khratesCR}, along with the expected rates in the absence of attenuation.
 Also shown are the highest and lowest X-ray heating and ionisation rates considered in \citet{Hummeletal2015}. 
 Compared to X-rays, CRs produce significantly less heating per ionisation event and penetrate to much higher densities before being attenuated; the X-ray heating and ionisation rates fall off much faster as the gas becomes optically thick.
 \subsection{Sink Particles}
