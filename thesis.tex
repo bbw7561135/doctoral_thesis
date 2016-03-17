@@ -112,6 +112,7 @@
 \newcommand{\xrb}{\ensuremath{\textsc{hmxb}}\xspace}
 %Computational
 \newcommand{\rsoft}{r_{\mathrm{soft}}}
+\newcommand{\code}[1]{\texttt{#1}}
 %Mathematics
 \newcommand{\curl}{\vec{\nabla}\times}  %curl, nabla times something
 \newcommand{\dive}{\vec{\nabla}\cdot}   %divergence, nabla dot something
@@ -2074,7 +2075,7 @@ Fortunately the HDF5 protocol is well-suited to such non-contiguous file access,
 The first method requires definition of an optional refinement criterion, such as particles above a given density threshold.
 The resulting `refined' index can then be used to select only the corresponding values from subsequent particle fields as they are loaded.
 While this method efficiently minimizes I/O operations, it is fairly rigid, and attempting to load additional fields into a dataframe from which particles have been manually dropped will fail, as the particle indices will no longer match.  
-As such, this approach is poorly suited to exploratory analysis where the proper refinement criterion may not be know {\it{a priori}} and is best suited for use in scripts where the analysis to be performed is well defined.
+As such, this approach is poorly suited to exploratory analysis where the proper refinement criterion may not be know \textit{a priori} and is best suited for use in scripts where the analysis to be performed is well defined.
 
 To mitigate the indexing issues that can arise in situations where data is loaded incrementally, \code{gadfly} performs an intermediate step, first loading new fields into a \code{pandas.Series} data structure, using the particle ID numbers as an index.  This allows \code{pandas} to properly align the particle fields, dropping any particles not in the existing \code{PartType} dataframe from the newly loaded field as it is appended.
 This approach, which can be used in tandem with the refinement index, affords \code{gadfly} the flexibility needed to allow incremental manual refinement of the data stored in memory. 
@@ -2131,7 +2132,7 @@ As the necessary data from each snapshot file is loaded, execution is passed to 
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/structure_halo/structure_halo}
 \caption{\label{fig:vis}
-Example of a visualization produced by \code{gadfly}.  This particular image shows the density distribution in a minihalo forming at $z=25$ on $1\,{\rm kpc}$ scales, and is from a simulation run for \citet{Hummeletal2015}.%
+Example of a visualization produced by \code{gadfly}.  This particular image shows the density distribution in a minihalo forming at $z=25$ on $1\,{\mathrm kpc}$ scales, and is from a simulation run for \citet{Hummeletal2015}.%
 }
 \end{center}
 \end{figure}
@@ -2144,18 +2145,18 @@ To mitigate this shortcoming, \code{gadfly} includes a minimal library of visual
 
 The particles in an SPH simulation are best thought of as fluid elements sampling the continuum properties of the gas they represent \citep{Lucy1977,GingoldMonaghan1977,Monaghan1992,Springel2010}.  They accomplish this by serving as Lagrangian tracers over which the continuum properties are interpolated using a smoothing kernel $W$. While it is possible to use alternative kernels, most modern SPH implementations (including \textsc{gadget}) utilize a cubic spline kernel \citep{Springel2014}: 
 \begin{equation}
-W(r,h_{\rm s}) =
+W(r,h_{\mathrm s}) =
      \begin{cases}
-       1 - 6 \left( \frac{r}{h_{\rm s}} \right)^2 + 6 \left( \frac{r}{h_{\rm s}} \right)^3, & 0 \leq \frac{r}{h_{\rm s}} \leq \frac{1}{2}\\
-       2 \left(1 - \frac{r}{h_{\rm s}}\right)^3, & \frac{1}{2} < \frac{r}{h_{\rm s}} \leq 1\\
+       1 - 6 \left( \frac{r}{h_{\mathrm s}} \right)^2 + 6 \left( \frac{r}{h_{\mathrm s}} \right)^3, & 0 \leq \frac{r}{h_{\mathrm s}} \leq \frac{1}{2}\\
+       2 \left(1 - \frac{r}{h_{\mathrm s}}\right)^3, & \frac{1}{2} < \frac{r}{h_{\mathrm s}} \leq 1\\
        0, & \frac{r}{h} >  1,\\
      \end{cases}
 \end{equation}
-where $r$ is the radius and $h_{\rm s}$ is the characteristic width of the kernel, otherwise known as the smoothing length.  The physical density at any point, $\rho(\bf{r})$, is then represented by the sum over all particles
+where $r$ is the radius and $h_{\mathrm s}$ is the characteristic width of the kernel, otherwise known as the smoothing length.  The physical density at any point, $\rho(\mathbf{r})$, is then represented by the sum over all particles
 \begin{equation}
-\rho({\bf r}) \simeq \sum_j m_j W({\bf r} - {\bf r}_j, h_{\rm s}),
+\rho({\mathbf r}) \simeq \sum_j m_j W({\mathbf r} - {\mathbf r}_j, h_{\mathrm s}),
 \end{equation}
-where $m_j$ is the mass of particle $j$, located at ${\bf r}_j$.
+where $m_j$ is the mass of particle $j$, located at ${\mathbf r}_j$.
 As such, creating visualizations that faithfully reproduce the actual density distribution requires performing this sum over all particles of interest; this can be quite computationally intensive depending on the number of particles involved and the desired resolution.
 The SPH particle rendering algorithm included in \code{gadfly} performs this summation over two dimensions, producing a density-weighted projection. An example of such a visualization produced by \code{gadfly} is shown in Figure \ref{fig:vis}.
 
