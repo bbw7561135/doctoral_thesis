@@ -31,7 +31,7 @@
 
 \pagestyle{plain}
 
-\newcommand\UTSpacing{\OnehalfSpacing}
+\newcommand\UTSpacing{\DoubleSpacing}
 \DeclareOption{double}{\renewcommand\UTSpacing{\DoubleSpacing}}
 \DeclareOption{single}{\renewcommand\UTSpacing{\SingleSpacing}}
 \ProcessOptions\relax
