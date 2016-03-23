@@ -1,6 +1,6 @@
 \documentclass[../thesis.tex]{subfiles}
 \begin{document}
-\chapter{A pandas-based Framework for Analyzing GADGET Simulation Data}
+\chapter{A pandas-based Framework for Analyzing GADGET Simulation Data}\footnote{This chapter has been submitted for publication in PASP (arXiv:1603.05190).}
 
 \section{Introduction}
 \label{sec:intro}
@@ -132,7 +132,6 @@ The default units for length, time, mass, etc. can be specified at initializatio
 While defaults are set at startup, they can be modified at any time, either by calling \verb|units.set_length()|, which alters the default length unit for all subsequently loaded fields, or by calling a particle field's load function with the optional \code{units} keyword argument.  
 Changing the units of an existing field can be done by simply reloading it; the field will remain properly indexed as described in Section \ref{sec:fileIO}. Examples of both approaches to unit conversions are shown in Figure \ref{fig:units}.
 
-%\clearpage
 \subsection{Coordinate Transformations}
 \label{sec:coords}
 A full suite of coordinate transformation utilities is included in \code{gadfly}, with methods for converting between Cartesian, spherical, and cylindrical coordinates, performing linear coordinate translations, and rotations about arbitrary axes.  
