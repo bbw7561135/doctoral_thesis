@@ -1,8 +1,7 @@
 % !TeX program = pdflatex
 
-\documentclass[12pt, double]{thesis}
+\documentclass[12pt,double]{thesis}
 \usepackage{subfiles}
-\usepackage{lipsum} % Dummy text for examples
 \usepackage{graphicx}
 \usepackage{xspace}
 \usepackage[space]{grffile}
@@ -137,7 +136,7 @@
 \graphicspath{{./figures/}}
 
 \bibliographystyle{apj}
-
+\settocdepth{subsubsection}
 \begin{document}
 
 \author{Jacob Alexander Hummel} 
@@ -180,6 +179,7 @@ Finally, we describe the novel software developed to enable this research.  Thes
 %\tableofcontents
 \tableofcontents.
 
+\listoftables
 \listoffigures
 
 \mainmatter
