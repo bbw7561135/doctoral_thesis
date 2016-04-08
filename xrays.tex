@@ -284,10 +284,17 @@ Thus the total heating rate $\Gamma_i^{\mathrm tot}$, including contributions fr
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=0.67\textwidth]{figures/structure/structure-vanilla_t0}
-    \includegraphics[width=0.67\textwidth]{figures/structure/structure-xr_tau2_J2_t0}
-    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for both the $\jxr=0$ (top) and the shielded $\jxr=10^2\,J_0$ (bottom) simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. In both cases, note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.  In the shielded $\jxr=10^2\,J_0$ case, the low-density filamentary structure is smoothed out due to X-ray heating, whereas gas at high densities is shielded and proceeds to collapse unimpeded.}
+    \includegraphics[width=\textwidth]{figures/structure/structure-vanilla_t0}
+    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the $\jxr=0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.}
     \label{zoom-in}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/structure/structure-xr_tau2_J2_t0}
+    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the the shielded $\jxr=10^2\,J_0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.  In the shielded $\jxr=10^2\,J_0$ case, the low-density filamentary structure is smoothed out due to X-ray heating, whereas gas at high densities is shielded and proceeds to collapse unimpeded.}
+    \label{zoom-in2}
   \end{center}
 \end{figure}
 
@@ -320,7 +327,7 @@ In addition, we also consider the optically-thin limit where $\tau_{\textsc{xr}}
 \label{collapse}
 \subsubsection{Collapse under Enhanced Cooling}
 \label{collapse_acceleration}
-\RefFig{zoom-in} shows the final simulation output on various scales for both the $\jxr=0$ and the shielded $\jxr = 10^2\,J_0$ case.  While the expected filamentary structure is visible in all cases, the effects of X-ray heating in the  $\jxr = 10^2\,J_0$ case are readily apparent, with the low-density filamentary gas  
+Figures \ref{zoom-in} and \ref{zoom-in2} show the final simulation output on various scales for the $\jxr=0$ and the shielded $\jxr = 10^2\,J_0$ case, respectively.  While the expected filamentary structure is visible in all cases, the effects of X-ray heating in the  $\jxr = 10^2\,J_0$ case are readily apparent, with the low-density filamentary gas  
 experiencing significant heating. With the usual definition of the virial radius \rvir as $\rho = \rho_{\mathrm vir} \equiv 178\,\rho_{\mathrm b}$, where $\rho$, $\rho_{\mathrm vir}$ and $\rho_{\mathrm b}$ are the average halo density, the density at the point of virialisation and the background density at the time of halo virialisation, we find that our $\jxr = 0$ minihalo collapses at $z=25.04$ with $\rvir \simeq 85\pc$ and $\mvir \simeq 2.1\times10^5\msun$, typical for the minihalo environment \citep{Bromm2013}.  
 
 \begin{figure}
