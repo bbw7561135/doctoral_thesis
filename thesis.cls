@@ -14,7 +14,7 @@
 %% 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{\jobname}[2014/12/12 v0.2  A class for the UT thesis]
+\ProvidesClass{utthesis}[2014/12/12 v0.2  A class for the UT thesis]
 \LoadClass[12pt,oneside]{memoir}
 \RequirePackage{xparse}
 \RequirePackage{amsmath}
@@ -180,6 +180,22 @@ The University of Texas at Austin\\
 #2, \the\UTyear
 \end{vplace}
 \end{titlingpage}}
+\DeclareDocumentEnvironment{UTdedication}{ o }{ %
+\begin{titlingpage}
+\begin{center}
+\vspace*{3.5in}
+}{%
+\end{center}
+\end{titlingpage}
+}
+\DeclareDocumentEnvironment{UTacknowledgements}{ o }{ %
+\begin{center}
+{\large \bfseries Acknowledgements}
+\end{center}
+
+\vskip 2em
+\indent
+}{\newpage}
 \DeclareDocumentEnvironment{UTabstract}{ O{} m  }{ %
 \begin{center}
 {\bfseries\thetitle}
@@ -279,6 +295,8 @@ Committee:
 \newcommand\nar{\ref@jnl{New A Rev.}}%  % New Astronomy Review
 \newcommand\pasa{\ref@jnl{PASA}}%  % Publications of the Astron. Soc. of Australia
 \newcommand\rmxaa{\ref@jnl{Rev. Mexicana Astron. Astrofis.}}%  % Revista Mexicana de Astronomia y Astrofisica
+
+\newcommand\nodata{ ~$\cdots$~ }
 
 %% 
 %% Copyright (C) 2014 by Henry Schreiner <henryiii@physics.utexas.edu>
