@@ -25,14 +25,6 @@ With this in mind, we present a \code{pandas}-based framework for analyzing \tex
 In this paper we present the first public release (v0.1) of \code{gadfly}, which is available at \code{http://github.com/hummel/gadfly}. 
 The framework design and organizational structure are outlined in Section \ref{sec:framework}, followed by a description of the included SPH particle rendering  in Section \ref{sec:vis}.  Our plans for future development are outlined in Section \ref{sec:future}, and a summary is provided in Section \ref{sec:summary}.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=.8\columnwidth]{figures/code_usage/code_usage}
-\caption{\label{fig:usage_example}
-Initializing a simulation, defining a \code{PartType} dataset, and loading data.%
-}
-\end{center}
-\end{figure}
 
 \section{A Framework built on pandas}
 \label{sec:framework}
@@ -49,19 +41,18 @@ While we otherwise aim to keep \code{gadfly} as general as possible, some assump
 Each particle type is expected to be contained in a different HDF5 group, labeled \code{PartType0, PartType1}, etc; a \code{Header} group is also expected, containing metadata for the simulation snapshot as HDF5 attributes. 
 All particles are expected to have the following fields defined: particle IDs, masses, coordinates, and velocities.  
 SPH particles are additionally expected to have a smoothing length, density, and internal energy.  Additional fields not included in the original \textsc{gadget} specification, such as chemical abundances, are also supported.
+\begin{figure}
+\begin{center}
+\includegraphics[width=.8\columnwidth]{figures/code_usage/code_usage}
+\caption{\label{fig:usage_example}
+Initializing a simulation, defining a \code{PartType} dataset, and loading data.%
+}
+\end{center}
+\end{figure}
 
 Here, we provide an overview of the design and capabilities of the \code{gadfly} framework, including the \code{Simulation}, \code{Snapshot}, and \code{PartType DataFrame} objects at the core of \code{gadfly} (Section \ref{sec:hierarchy}), the usage of which is demonstrated in Figure \ref{fig:usage_example}.
 Our approach to file access and intelligent memory management (Section \ref{sec:fileIO}), our handling of unit conversions (Section \ref{sec:units}) and coordinate transformations (Section \ref{sec:coords}), and the included utilities for parallel batch processing (Section \ref{sec:parallel}) are also described.
 
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/code_custom_ptypes/code_custom_ptypes}
-\caption{\label{fig:custom_ptype}
-Loading non-standard particle fields and defining custom PartType classes. Within \code{gadfly} this is straightforward.%
-}
-\end{center}
-\end{figure}
 
 \subsection{Organizational Structure}
 \label{sec:hierarchy}
@@ -75,6 +66,14 @@ As such, \code{PartType} dataframes retain all the capabilities of the \code{pan
 
 Nonstandard particle fields (e.g., chemical abundances) can be easily loaded into \code{gadfly} as well; fields loaded in this manner simply lack automated unit conversion.
 Alternatively, a custom dataframe class inheriting from \code{PartTypeNbody} or \code{PartTypeSPH} as appropriate can be defined to provide methods for loading both nonstandard particle fields and additional derived properties (e.g., temperature). An example of such a custom class---\code{PartTypeCustom.py}---is provided in the examples distributed with \code{gadfly}, and the usage of such a custom class is demonstrated in Figure \ref{fig:custom_ptype}.
+\begin{figure}
+\begin{center}
+\includegraphics[width=.85\columnwidth]{figures/code_custom_ptypes/code_custom_ptypes}
+\caption{\label{fig:custom_ptype}
+Loading non-standard particle fields and defining custom PartType classes. Within \code{gadfly} this is straightforward.%
+}
+\end{center}
+\end{figure}
 
 \subsubsection{\code{Snapshot}}
 \label{sec:snap}
@@ -101,15 +100,6 @@ To mitigate the indexing issues that can arise in situations where data is loade
 This approach, which can be used in tandem with the refinement index, affords \code{gadfly} the flexibility needed to allow incremental manual refinement of the data stored in memory. 
 Additional cuts can be made as subsequent fields are loaded, resulting in the selection of a precisely targeted primary dataset from which derived  properties (e.g., temperature) may be calculated, which serves to reduce computational overhead as well.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/code_units/code_units}
-\caption{\label{fig:units}
-Unit handling in \code{gadfly}.%
-}
-\end{center}
-\end{figure}
-
 \subsection{Units}
 \label{sec:units}
 \code{Gadfly} implements a minimal unit-handling system for converting between the native code units in which \textsc{gadget} stores data and the physical units of interest to astronomers.  
@@ -131,6 +121,15 @@ Conversion from code units to the physical units system of choice is handled at 
 The default units for length, time, mass, etc. can be specified at initialization, along with whether to use physical or comoving coordinates (for cosmological simulations) and whether to factor the Hubble constant out of the reported units (i.e., units of Mpc vs. Mpc/$h$).
 While defaults are set at startup, they can be modified at any time, either by calling \verb|units.set_length()|, which alters the default length unit for all subsequently loaded fields, or by calling a particle field's load function with the optional \code{units} keyword argument.  
 Changing the units of an existing field can be done by simply reloading it; the field will remain properly indexed as described in Section \ref{sec:fileIO}. Examples of both approaches to unit conversions are shown in Figure \ref{fig:units}.
+\begin{figure}
+\begin{center}
+\includegraphics[width=.85\columnwidth]{figures/code_units/code_units}
+\caption{\label{fig:units}
+Unit handling in \code{gadfly}.%
+}
+\end{center}
+\end{figure}
+
 
 \subsection{Coordinate Transformations}
 \label{sec:coords}
@@ -146,15 +145,6 @@ To aid in the parallelization of such analyses, \code{gadfly} includes utilities
 One issue with doing operations such as this in parallel is that they are often IO-bound.
 To mitigate the issues that arise when multiple processes attempt to read large amounts of data from disk simultaneously, \code{gadfly}'s parallelization utilities are designed to load the data needed for a given analysis serially in a separate thread from the main execution. 
 As the necessary data from each snapshot file is loaded, execution is passed to a pool of worker processes which can then perform the remainder of the analysis in parallel.  An example of such a parallel batch processing script is included in the examples distributed with \code{gadfly}.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/structure_halo/structure_halo}
-\caption{\label{fig:vis}
-Example of a visualization produced by \code{gadfly}.  This particular image shows the density distribution in a minihalo forming at $z=25$ on $1\,{\mathrm kpc}$ scales, and is from a simulation run for \citet{Hummeletal2015}.%
-}
-\end{center}
-\end{figure}
 
 \section{Visualization}
 \label{sec:vis}
@@ -178,6 +168,15 @@ where $r$ is the radius and $h_{\mathrm sml}$ is the characteristic width of the
 where $m_j$ is the mass of particle $j$, located at ${\mathbf r}_j$.
 As such, creating visualizations that faithfully reproduce the actual density distribution requires performing this sum over all particles of interest; this can be quite computationally intensive depending on the number of particles involved and the desired resolution.
 The SPH particle rendering algorithm included in \code{gadfly} performs this summation over two dimensions, producing a density-weighted projection. An example of such a visualization produced by \code{gadfly} is shown in Figure \ref{fig:vis}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/structure_halo/structure_halo}
+\caption{\label{fig:vis}
+Example of a visualization produced by \code{gadfly}.  This particular image shows the density distribution in a minihalo forming at $z=25$ on $1\,{\mathrm kpc}$ scales, and is from a simulation run for \citet{Hummeletal2015}.%
+}
+\end{center}
+\end{figure}
 
 \code{Gadfly} includes three separate implementations of this algorithm, each of which is best suited to different conditions:
 \begin{enumerate}
