@@ -113,13 +113,6 @@ intensity of $J_0$, as shown in \RefFig{xrayIntensity}.
  \end{center}
 \end{figure}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/optical_depth/column_density}
-\caption{\label{fig:column_density} Cumulative column density along both polar and equatorial lines of sight approaching the center of the minihalo.  Shown is the column density for a selection of snapshots from just prior to the formation of the first sink particle to $5000\yr$ later, with different colors indicating different snapshots.  Note that the scatter in the central $10^3\au$ is larger in the equatorial plane than along the pole: as the accretion disc rotates, occasionally a sink particle orbiting the density-averaged center lands within the chosen line of sight.}
-\end{center}
-\end{figure}
-
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \subsection{Jeans Mass Filtering under X-ray Feedback}
 \label{filtering}
@@ -199,7 +192,22 @@ Our chemistry and cooling network is the same as that described in \citet{Greife
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \subsection{Optical Depth Estimation}
 \label{attenuation}
-Over the length scale of our cosmological box, the X-ray optical depth of primordial gas is $\ll 1$ everywhere except approaching the center of the star-forming minihalo. As the CXB radiation penetrates the minihalo, it will necessarily be attenuated due to the high column density $N$ of the intervening gas.  In order to estimate the optical depth, we directly calculate the column density approaching the center of the accretion disc along both polar and equatorial lines of sight in the absence of a CXB. As shown in Figure \ref{fig:column_density}, the column density remains essentially constant for the duration of the simulation, and has a simple power-law dependence on radius over several orders of magnitude up to the resolution limit of our simulation ($\sim100\au$). This same power-law behavior can be seen versus density as well, as shown in Figure \ref{fig:ncol_fit}. In addition we notice that for a given gas density, the column density along the pole is roughly a factor of 10 lower than along the equator.  Performing an ordinary least squares fit to the combined data from several snapshots for $n > 10^4\cc$, we find that the column density along the pole and equator is well fit by 
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/optical_depth/column_density}
+\caption{\label{fig:column_density} Cumulative column density along both polar and equatorial lines of sight approaching the center of the minihalo.  Shown is the column density for a selection of snapshots from just prior to the formation of the first sink particle to $5000\yr$ later, with different colors indicating different snapshots.  Note that the scatter in the central $10^3\au$ is larger in the equatorial plane than along the pole: as the accretion disc rotates, occasionally a sink particle orbiting the density-averaged center lands within the chosen line of sight.}
+\end{center}
+\end{figure}
+
+Over the length scale of our cosmological box, the X-ray optical depth of primordial gas is $\ll 1$ everywhere except approaching the center of the star-forming minihalo. As the CXB radiation penetrates the minihalo, it will necessarily be attenuated due to the high column density $N$ of the intervening gas.  In order to estimate the optical depth, we directly calculate the column density approaching the center of the accretion disc along both polar and equatorial lines of sight in the absence of a CXB. As shown in Figure \ref{fig:column_density}, the column density remains essentially constant for the duration of the simulation, and has a simple power-law dependence on radius over several orders of magnitude up to the resolution limit of our simulation ($\sim100\au$). This same power-law behavior can be seen versus density as well, as shown in Figure \ref{fig:ncol_fit}. 
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{figures/optical_depth/col_density_fit}
+\caption{\label{fig:ncol_fit}
+Column density as a function of gas number density along both polar (green) and equatorial (blue) lines of sight.  Points sample the distribution of column density as a function of number density for their respective lines of sight across several snapshots, while the lines indicate the $\chi^2$ best fit.}
+\end{center}
+\end{figure}
+In addition we notice that for a given gas density, the column density along the pole is roughly a factor of 10 lower than along the equator.  Performing an ordinary least squares fit to the combined data from several snapshots for $n > 10^4\cc$, we find that the column density along the pole and equator is well fit by 
 \begin{equation}
 {\mathrm log}_{10}(N_{\mathrm pole}) = 0.5323\, {\mathrm log_{10}}(n) + 19.64
 \end{equation}
@@ -209,13 +217,6 @@ and
 \end{equation}
 respectively, and does not change appreciably with increasing \jxr.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/optical_depth/col_density_fit}
-\caption{\label{fig:ncol_fit}
-Column density as a function of gas number density along both polar (green) and equatorial (blue) lines of sight.  Points sample the distribution of column density as a function of number density for their respective lines of sight across several snapshots, while the lines indicate the $\chi^2$ best fit.}
-\end{center}
-\end{figure}
 
 To account for this difference in column density, we assume every line of sight within 45 degrees of the pole \citep{Hosokawaetal2011} experiences column density $N_{\mathrm pole}$ and every other line of sight experiences $N_{\mathrm eq}$. Radiation within the opening angle is attenuated by $e^{-\sigma_{\nu}^i N_{\mathrm pole}}$ while the remainder of the background is attenuated by $e^{-\sigma_{\nu}^i N_{\mathrm eq}}$, allowing us to define an effective optical depth $\tau_{\textsc{xr}}$ such that
 \begin{equation}
@@ -282,29 +283,6 @@ Thus the total heating rate $\Gamma_i^{\mathrm tot}$, including contributions fr
 \left(1 - \frac{\nu^i_{\mathrm ion}}{\nu} \right) e^{-\tau_{\textsc{xr}}} d\nu.
 \end{equation}
 
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\textwidth]{figures/structure/structure-vanilla_t0}
-    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the $\jxr=0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.}
-    \label{zoom-in}
-  \end{center}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\textwidth]{figures/structure/structure-xr_tau2_J2_t0}
-    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the the shielded $\jxr=10^2\,J_0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.  In the shielded $\jxr=10^2\,J_0$ case, the low-density filamentary structure is smoothed out due to X-ray heating, whereas gas at high densities is shielded and proceeds to collapse unimpeded.}
-    \label{zoom-in2}
-  \end{center}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\columnwidth]{figures/phase_diagrams/temp}
-    \caption{Mass-weighted temperature distribution of the collapsing gas in each simulation, shown just prior to sink formation---or maximum density reached in the case of the $10^3 J_0$ background. Each panel shows the behavior of the gas in the presence of the CXB, both shielded (in blue) and unshielded (in red). For comparison, the gas behavior in the $\jxr=0$ case is shown in gray.  Dashed lines denote the CMB temperature. All simulations except the $10^3 J_0$ case successfully collapse to high densities.  Gas at low densities gets progressively hotter and gas in the loitering phase gets progressively cooler with increasing \jxr. Note that in all cases where the minihalo successfully proceeds to collapse, the shielded gas re-converges to the $\jxr=0$ case prior to reaching sink formation densities.}
-    \label{Tdens}
-  \end{center}
-\end{figure}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \subsection{Sink Particles}
 \label{sink_particles}
@@ -329,7 +307,33 @@ In addition, we also consider the optically-thin limit where $\tau_{\textsc{xr}}
 \label{collapse_acceleration}
 Figures \ref{zoom-in} and \ref{zoom-in2} show the final simulation output on various scales for the $\jxr=0$ and the shielded $\jxr = 10^2\,J_0$ case, respectively.  While the expected filamentary structure is visible in all cases, the effects of X-ray heating in the  $\jxr = 10^2\,J_0$ case are readily apparent, with the low-density filamentary gas  
 experiencing significant heating. With the usual definition of the virial radius \rvir as $\rho = \rho_{\mathrm vir} \equiv 178\,\rho_{\mathrm b}$, where $\rho$, $\rho_{\mathrm vir}$ and $\rho_{\mathrm b}$ are the average halo density, the density at the point of virialisation and the background density at the time of halo virialisation, we find that our $\jxr = 0$ minihalo collapses at $z=25.04$ with $\rvir \simeq 85\pc$ and $\mvir \simeq 2.1\times10^5\msun$, typical for the minihalo environment \citep{Bromm2013}.  
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/structure/structure-vanilla_t0}
+    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the $\jxr=0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.}
+    \label{zoom-in}
+  \end{center}
+\end{figure}
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figures/structure/structure-xr_tau2_J2_t0}
+    \caption{Density projection of the final simulation output 5000\yr after the formation of the first sink particle on progressively smaller scales for the the shielded $\jxr=10^2\,J_0$ simulations.  White boxes indicate the region depicted on the next smaller scale.  Clockwise from top left: full simulation box; minihalo and surrounding filamentary structure; central 100\pc of minihalo; central 10\pc.  The density scale for each panel is included just to the right -- note that the scaling changes from panel to panel. Note how the morphology approaches an increasingly smooth, spherical distribution on the smallest scales, where the gas is in quasi-hydrostatic equilibrium.  In the shielded $\jxr=10^2\,J_0$ case, the low-density filamentary structure is smoothed out due to X-ray heating, whereas gas at high densities is shielded and proceeds to collapse unimpeded.}
+    \label{zoom-in2}
+  \end{center}
+\end{figure}
+
+After the minihalo virializes, the gas continues to collapse in accordance with the standard picture of Pop III star formation \citep[e.g.,][]{StacyGreifBromm2010, Greifetal2012, StacyBromm2013}. This picture is modified slightly in the presence of an X-ray background, but in the $\jxr=0$ case the gas heats adiabatically until reaching $n\sim1\cc$, attaining temperatures of $\sim$1000\kelvin. Beyond this point, the gas is able to cool via the ro-vibrational modes of \htwo, reaching a minimum temperature of \about200\kelvin at a density of $n\sim10^4\cc$.  After exiting the quasi-hydrostatic `loitering phase' \citep{BrommCoppiLarson2002}, the gas enters runaway collapse until $n\sim10^8\cc$, when three-body reactions become important.  This process turns the gas fully molecular by $n\sim10^{12}\cc$, the density at which we form sink particles. As seen in \RefFig{Tdens}, this basic picture holds true even as we vary the strength of the CXB by several orders of magnitude. 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\columnwidth]{figures/phase_diagrams/temp}
+    \caption{Mass-weighted temperature distribution of the collapsing gas in each simulation, shown just prior to sink formation---or maximum density reached in the case of the $10^3 J_0$ background. Each panel shows the behavior of the gas in the presence of the CXB, both shielded (in blue) and unshielded (in red). For comparison, the gas behavior in the $\jxr=0$ case is shown in gray.  Dashed lines denote the CMB temperature. All simulations except the $10^3 J_0$ case successfully collapse to high densities.  Gas at low densities gets progressively hotter and gas in the loitering phase gets progressively cooler with increasing \jxr. Note that in all cases where the minihalo successfully proceeds to collapse, the shielded gas re-converges to the $\jxr=0$ case prior to reaching sink formation densities.}
+    \label{Tdens}
+  \end{center}
+\end{figure}
+
+We find that X-ray heating dominates at low densities in all cases, while above $n\sim10^2\cc$ the additional cooling catalyzed by X-ray ionization exceeds it; the precise density at which this transition occurs depends on the strength of the CXB.  This enhanced cooling significantly impacts the subsequent evolution of the gas as it collapses to high densities; the minimum temperature of the gas in the loitering phase approaches the CMB floor as $\jxr$ increases, and---in the unshielded simulations---remains cooler than the $\jxr=0$ case in all later stages of the collapse. This allows the gas to more easily fulfill the Jeans criterion and thus collapse sooner, as demonstrated by \RefFig{xrfig:collapse}.
 \begin{figure}
   \begin{center}
     \includegraphics[width=\columnwidth]{figures/growth/collapse}
@@ -338,22 +342,12 @@ experiencing significant heating. With the usual definition of the virial radius
   \end{center}
 \end{figure}
 
-After the minihalo virializes, the gas continues to collapse in accordance with the standard picture of Pop III star formation \citep[e.g.,][]{StacyGreifBromm2010, Greifetal2012, StacyBromm2013}. This picture is modified slightly in the presence of an X-ray background, but in the $\jxr=0$ case the gas heats adiabatically until reaching $n\sim1\cc$, attaining temperatures of $\sim$1000\kelvin. Beyond this point, the gas is able to cool via the ro-vibrational modes of \htwo, reaching a minimum temperature of \about200\kelvin at a density of $n\sim10^4\cc$.  After exiting the quasi-hydrostatic `loitering phase' \citep{BrommCoppiLarson2002}, the gas enters runaway collapse until $n\sim10^8\cc$, when three-body reactions become important.  This process turns the gas fully molecular by $n\sim10^{12}\cc$, the density at which we form sink particles. As seen in \RefFig{Tdens}, this basic picture holds true even as we vary the strength of the CXB by several orders of magnitude. 
-
-We find that X-ray heating dominates at low densities in all cases, while above $n\sim10^2\cc$ the additional cooling catalyzed by X-ray ionization exceeds it; the precise density at which this transition occurs depends on the strength of the CXB.  This enhanced cooling significantly impacts the subsequent evolution of the gas as it collapses to high densities; the minimum temperature of the gas in the loitering phase approaches the CMB floor as $\jxr$ increases, and---in the unshielded simulations---remains cooler than the $\jxr=0$ case in all later stages of the collapse. This allows the gas to more easily fulfill the Jeans criterion and thus collapse sooner, as demonstrated by \RefFig{xrfig:collapse}.
-
 When shielding is properly accounted for, the gas becomes optically thick to X-rays as it exits the loitering phase and proceeds to runaway collapse (see \RefFig{fig:khratesXR}).  In the absence of continued X-ray ionization, the free electron fraction decays, re-converging with that of the $\jxr=0$ case.  Consequently, the thermodynamic behavior of the gas at high densities in the shielded simulations is remarkably similar, even as we vary the CXB strength by several orders of magnitude as shown in Figure \ref{Tdens}. This convergence under a wide range of X-ray backgrounds is similar to the behavior noted by \citet{StacyBrommLoeb2011a} and \citet{Greifetal2011b} in the presence of dark matter--baryon streaming, though we observe an earlier---rather than a later---collapse.
 
 \subsubsection{Collapse Suppression}
  \label{suppression}
 Minihalo collapse in the $\jxr = 1000\,J_0$ case is completely suppressed.  While the gas in the very center of the minihalo does initially begin to cool via \htwo, this process is quickly overwhelmed by heating from the increasingly strong X-ray background.  Despite reaching densities and temperatures approaching $n \simeq 50\cc$ and $T \simeq 200\kelvin$ this cold core is eventually dissipated as the CXB continues to heat the gas. 
 The reason for this suppression is demonstrated clearly in \RefFig{suppressed}, where we have shown the enclosed mass and the Jeans mass as a function of radius for both the $\jxr = 0$ and the $\jxr = 1000\,J_0$ case. Here, we calculate the Jeans mass using the average density and temperature within a given radius, extending out to the virial radius of the halo.  The $\jxr = 0$ case is shown just prior to the formation of the first sink particle in that simulation; the $\jxr = 1000\,J_0$ case is shown at the maximum density reached over the course of the simulation.  While the enclosed mass in the $\jxr = 0$ minihalo exceeds the Jeans mass on all scales, and thus is universally collapsing, the cold core in the $\jxr = 1000\,J_0$ minihalo never gains sufficient mass to exceed the Jeans criterion.
-
-%::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\subsection{Sink Particle Formation and Accretion}
-\subsubsection{Build-up of a Central Disc}
- \RefFig{sinkmasses} shows the growth over time of all sink particles formed in our simulations, from the formation of the first sink to simulation's end 5000\yr later.  Sink particles are formed when the gas in the center of the minihalo reaches $10^{12}\cc$, and in all cases a central disc forms within $300\yr$ of the first sink particle, as seen in \RefFig{disks}, where we have shown the density structure of the central $10^4\,$AU of each simulation.  In the absence of any X-ray irradiation, the accretion disc fragments and forms a stable binary system, in agreement with previous studies \citep[e.g.,][]{ StacyGreifBromm2010, Clarketal2011a, Clarketal2011b, Greifetal2011, Greifetal2012}. When self-shielding is properly accounted for, the thermodynamic state of the gas in X-ray irradiated minihalos is remarkably similar to the $\jxr=0$ case by the time it reaches sink formation densities. The mass distribution, however, is in all cases significantly steeper than in the $\jxr=0$ case, as shown in \RefFig{mbins}. This is a direct consequence of the earlier collapse discussed in \RefSec{collapse_acceleration}: the sooner the gas collapses to high densities, the less time is available for gas to accumulate in the center of the minihalo. 
-
 \begin{figure}
   \begin{center}
     \includegraphics[width=\columnwidth]{figures/halo/blowout}   
@@ -363,6 +357,12 @@ The reason for this suppression is demonstrated clearly in \RefFig{suppressed}, 
     \label{suppressed}
   \end{center}
 \end{figure}
+
+%::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\subsection{Sink Particle Formation and Accretion}
+\subsubsection{Build-up of a Central Disc}
+ \RefFig{sinkmasses} shows the growth over time of all sink particles formed in our simulations, from the formation of the first sink to simulation's end 5000\yr later.  Sink particles are formed when the gas in the center of the minihalo reaches $10^{12}\cc$, and in all cases a central disc forms within $300\yr$ of the first sink particle, as seen in \RefFig{disks}, where we have shown the density structure of the central $10^4\,$AU of each simulation.  In the absence of any X-ray irradiation, the accretion disc fragments and forms a stable binary system, in agreement with previous studies \citep[e.g.,][]{ StacyGreifBromm2010, Clarketal2011a, Clarketal2011b, Greifetal2011, Greifetal2012}. When self-shielding is properly accounted for, the thermodynamic state of the gas in X-ray irradiated minihalos is remarkably similar to the $\jxr=0$ case by the time it reaches sink formation densities. The mass distribution, however, is in all cases significantly steeper than in the $\jxr=0$ case, as shown in \RefFig{mbins}. This is a direct consequence of the earlier collapse discussed in \RefSec{collapse_acceleration}: the sooner the gas collapses to high densities, the less time is available for gas to accumulate in the center of the minihalo. 
+
 
 
 
