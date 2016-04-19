@@ -98,12 +98,6 @@ The factor of $(1+z)^3$ accounts for the conversion from a comoving SFRD to a ph
 The mass fraction of Pop III stars dying as SNe depends strongly on their IMF, and while the complex physical processes at play in gas collapsing from IGM to protostellar densities have so far prevented a definitive answer to this question, the emerging consensus is that the Pop III IMF was somewhat top-heavy with a characteristic mass of $\sim$ a few $\times 10\msun$ \citep{Bromm2013}.  
 Given this, we assume one SN is produced for every $50\msun$ of stars formed and each SN-producing star dies quickly as a core-collapse explosion with $E_{\mathrm  SN} = 10^{51}\erg$, 10 percent of which goes into CR production.  
 
-This fiducial estimate for $\ucrz$---henceforth referred to as model $u_0$---is shown in Figure \ref{fig:ucr}, where we compare the energy density in CRs to the gas thermal energy density in the IGM, the range of estimates for the IGM magnetic field energy density, and the energy density of the cosmic microwave background. 
-We also mark the most conservative upper limits placed on $\ucr$ by \citet{RollindeVangioniOlive2006}, calculated using the observed overabundance of $^6$Li compared to big bang nucleosynthesis. 
-Given the huge uncertainties inherent in estimating the strength of the high-$z$ CR background, we also consider five additional models with 10, $10^2$, $10^3$, $10^4$, and $10^5$ times the energy density of model $u_0$, as shown in Figure \ref{fig:ucr}.  
-This allows us to bracket the plausible range of energy densities, from values comparable to the IGM thermal energy density to just below the upper limits from $^6$Li abundance measurements.
- 
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=1\columnwidth]{figures/u_cr/u_cr}
@@ -116,6 +110,12 @@ Finally, purple points denote the energy densities employed by \citet{StacyBromm
 }
 \end{center}
 \end{figure}
+This fiducial estimate for $\ucrz$---henceforth referred to as model $u_0$---is shown in Figure \ref{fig:ucr}, where we compare the energy density in CRs to the gas thermal energy density in the IGM, the range of estimates for the IGM magnetic field energy density, and the energy density of the cosmic microwave background. 
+We also mark the most conservative upper limits placed on $\ucr$ by \citet{RollindeVangioniOlive2006}, calculated using the observed overabundance of $^6$Li compared to big bang nucleosynthesis. 
+Given the huge uncertainties inherent in estimating the strength of the high-$z$ CR background, we also consider five additional models with 10, $10^2$, $10^3$, $10^4$, and $10^5$ times the energy density of model $u_0$, as shown in Figure \ref{fig:ucr}.  
+This allows us to bracket the plausible range of energy densities, from values comparable to the IGM thermal energy density to just below the upper limits from $^6$Li abundance measurements.
+ 
+
 
 \section{Numerical Methodology}
 \label{sec:methods}
@@ -208,32 +208,6 @@ where
 \Omega_{\mathrm  pole} = \int_0^{2\pi}{\mathrm d}\phi \int_0^{\pi/4}{\mathrm sin}\theta \,{\mathrm d}\theta = 1.84\,{\mathrm sr}.
 \end{equation}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/khrates/khratesCR}
-\caption{\label{fig:khratesCR}
-Ionization and heating rates as a function of total gas number density for both a cosmic ray and an X-ray background at $z=25$. 
-In both panels, the solid blue lines denote the rate for our fiducial CR background, $u_0$. The solid red lines show the fiducial X-ray rates from \citet{Hummeletal2015}, while the dashed gray lines demonstrate the expected rates in the absence of gas self-shielding.  
-The dash-dotted blue (red) lines mark the highest-intensity CR (X-ray) heating and ionization rates investigated. 
-For a given energy density, CRs are more effective at ionizing and heating the gas; vertical placement on this chart is simply a matter of normalization, stemming from the assumptions outlined in Section \ref{sec:context}. 
-Note that X-rays cause significantly more heating per ionization event than CRs, but are strongly attenuated at high densities. CRs are significantly more penetrative in comparison.%
-} 
-\end{center}
-\end{figure}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{figures/temp/temp}
-\includegraphics[width=\columnwidth]{figures/temp/temp_halo2}
-\caption{\label{fig:temp}
-Mass-weighted temperature-density distribution of the gas collapsing into Halo 1 (top) and Halo 2 (bottom), shown just prior to sink formation. 
-Each panel shows the behavior of gas collapsing under a CR background of a given strength. 
-In each case, the behavior of the gas in the $\ucr=0$ case is reproduced for comparison (light gray); dashed lines denote the CMB temperature when collapse occurs. Gas at low densities gets progressively hotter and gas in the loitering phase gets progressively cooler with increasing $\ucr$. 
-Note that the gas invariably proceeds to collapse, and converges toward a similar thermodynamic path as it approaches sink formation densities, regardless of the CR background strength.%
-}
-\end{center}
-\end{figure}
-
 Accounting for this attenuation of the CR background and following the treatment of \citet{StacyBromm2007} and \citet{InayoshiOmukai2011}, the cosmic ray heating rate $\Gamma_{\mathrm  CR}$ and ionization rate $k_{\mathrm  CR}$ are given by
 \begin{equation}
 \Gamma_{\mathrm  CR} = 
@@ -255,6 +229,20 @@ While this neglects the slight difference in average CR energy loss per interact
 The resulting heating and ionization rates for both the $\ucr=u_0$ and $10^5\,u_0$ cases are shown in Figure \ref{fig:khratesCR}, along with the expected rates in the absence of attenuation.
 Also shown are the highest and lowest X-ray heating and ionization rates considered in \citet{Hummeletal2015}. 
 Compared to X-rays, CRs produce significantly less heating per ionization event and penetrate to much higher densities before being attenuated; the X-ray heating and ionization rates fall off much faster as the gas becomes optically thick.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=.7\columnwidth]{figures/khrates/khratesCR}
+\caption{\label{fig:khratesCR}
+Ionization and heating rates as a function of total gas number density for both a cosmic ray and an X-ray background at $z=25$. 
+In both panels, the solid blue lines denote the rate for our fiducial CR background, $u_0$. The solid red lines show the fiducial X-ray rates from \citet{Hummeletal2015}, while the dashed gray lines demonstrate the expected rates in the absence of gas self-shielding.  
+The dash-dotted blue (red) lines mark the highest-intensity CR (X-ray) heating and ionization rates investigated. 
+For a given energy density, CRs are more effective at ionizing and heating the gas; vertical placement on this chart is simply a matter of normalization, stemming from the assumptions outlined in Section \ref{sec:context}. 
+Note that X-rays cause significantly more heating per ionization event than CRs, but are strongly attenuated at high densities. CRs are significantly more penetrative in comparison.%
+} 
+\end{center}
+\end{figure}
+
 \subsection{Sink Particles}
 \label{sinkParticles}
 Our sink particle method is described in \citet{StacyGreifBromm2010}. 
@@ -272,28 +260,16 @@ Once the sink is formed, additional particles (including smaller sinks) are accr
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=1\columnwidth]{figures/binned_T_efrac/binned_T_efrac}
-\caption{\label{fig:efrac}
-From top to bottom, density-binned average gas temperature, $\htwo$ fraction, and free electron fraction for both Halo 1 (left) and Halo 2  (right). 
-As $\ucr$ increases, the additional ionization increases f$_{e^-}$, which in turn elevates f$_{\htwo}$. 
-Combined with the additional heating provided by the CR background, this allows $\htwo$ cooling to activate at slightly lower densities and gas in the loitering phase to reach slightly lower temperatures, as seen in the top panel.%
+\includegraphics[width=\columnwidth]{figures/temp/temp}
+\includegraphics[width=\columnwidth]{figures/temp/temp_halo2}
+\caption{\label{fig:temp}
+Mass-weighted temperature-density distribution of the gas collapsing into Halo 1 (top) and Halo 2 (bottom), shown just prior to sink formation. 
+Each panel shows the behavior of gas collapsing under a CR background of a given strength. 
+In each case, the behavior of the gas in the $\ucr=0$ case is reproduced for comparison (light gray); dashed lines denote the CMB temperature when collapse occurs. Gas at low densities gets progressively hotter and gas in the loitering phase gets progressively cooler with increasing $\ucr$. 
+Note that the gas invariably proceeds to collapse, and converges toward a similar thermodynamic path as it approaches sink formation densities, regardless of the CR background strength.%
 }
 \end{center}
 \end{figure}
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=.95\columnwidth]{figures/collapse/collapse}
-\caption{\label{crfig:collapse}
-Total gas mass within $1\pc$ of the highest density point in each simulation over cosmic time.
-Top: Halo 1; bottom: Halo 2.
-As $\ucr$ increases, the additional heating and ionization allows the gas to fulfill the Rees-Ostriker criterion ($t_{\mathrm cool} \lesssim t_{\mathrm ff}$) sooner, expediting collapse to high densities.  
-The sooner runaway collapse sets in, the less time gas has to accumulate in the center of the minihalo, resulting in a lower total mass within $1\pc$ at simulation's end.
-The discontinuity seen in the growth of Halo 2 is a numerical artifact arising from the cut-out and refinement process.%
-}
-\end{center}
-\end{figure}
-
 \section{Results}
 \label{sec:results}
 \subsection{Initial Collapse}
@@ -314,19 +290,49 @@ In concert with the onset of three-body processes this renders CR ionization and
 As a result, the thermal behavior of the gas increasingly resembles that seen in the $\ucr=0$ case as the collapse proceeds. 
 To wit, by the time we form sink particles at  $10^{12}\cc$ the thermodynamic state of the gas is remarkably similar, even as we vary the CR background strength by five orders of magnitude.
 This convergence under a wide range of environmental conditions is similar to that seen in the presence of both an X-ray background \citep{Hummeletal2015} and DM--baryon streaming \citep{StacyBrommLoeb2011a,Greifetal2011b}.
-
 \begin{figure}
 \begin{center}
-\includegraphics[width=\columnwidth]{figures/structure/structure}
+\includegraphics[width=1\columnwidth]{figures/binned_T_efrac/binned_T_efrac}
+\caption{\label{fig:efrac}
+From top to bottom, density-binned average gas temperature, $\htwo$ fraction, and free electron fraction for both Halo 1 (left) and Halo 2  (right). 
+As $\ucr$ increases, the additional ionization increases f$_{e^-}$, which in turn elevates f$_{\htwo}$. 
+Combined with the additional heating provided by the CR background, this allows $\htwo$ cooling to activate at slightly lower densities and gas in the loitering phase to reach slightly lower temperatures, as seen in the top panel.%
+}
+\end{center}
+\end{figure}
+
+\subsubsection{Expedited Collapse}
+\label{sec:expedited_collapse}
+\begin{figure}
+\begin{center}
+\includegraphics[width=.95\columnwidth]{figures/collapse/collapse}
+\caption{\label{crfig:collapse}
+Total gas mass within $1\pc$ of the highest density point in each simulation over cosmic time.
+Top: Halo 1; bottom: Halo 2.
+As $\ucr$ increases, the additional heating and ionization allows the gas to fulfill the Rees-Ostriker criterion ($t_{\mathrm cool} \lesssim t_{\mathrm ff}$) sooner, expediting collapse to high densities.  
+The sooner runaway collapse sets in, the less time gas has to accumulate in the center of the minihalo, resulting in a lower total mass within $1\pc$ at simulation's end.
+The discontinuity seen in the growth of Halo 2 is a numerical artifact arising from the cut-out and refinement process.%
+}
+\end{center}
+\end{figure}
+Boosting the $\htwo$ fraction in the gas lowers the density threshold for efficient cooling, allowing the gas to fulfill the Rees-Ostriker criterion sooner by driving the cooling time $t_{\mathrm  cool}$ below the freefall time $t_{\mathrm  ff}$ \citep{ReesOstriker1977}.
+This is demonstrated in Figure \ref{fig:efrac}, where we see the density at which the gas begins to cool drop as the CR background strength increases.  
+This necessarily expedites the subsequent phases of the collapse, as seen clearly in Figure \ref{crfig:collapse}, where we show the total gas mass within 1 pc (physical) of the minihalo's center as a function of redshift.  
+
+
+The impact this has on the environment in which the minihalo collapses is seen in Figure \ref{fig:structure}, where we show the final simulation output on various scales for Halo 1 and Halo 2, both in the absence of any CR background ($\ucr=0$) and with $\ucr=10^5\,u_0$. 
+Low density filamentary gas is heated and prevented from collapsing, reducing the clumping of the IGM and possibly impacting the early stages of reionization.
+Gas above a $\ucr$-dependent density threshold on the other hand experiences enhanced cooling and thus has its collapse expedited.
+As a result, the dynamical environment in which the first sink particles form varies significantly depending on the strength of the CR background.
+\begin{figure}
+\begin{center}
+\includegraphics[width=.9\columnwidth]{figures/structure/structure}
 \caption{\label{fig:structure}
 Simulation structure for both Halo 1 (top) and Halo 2 (bottom) as seen in the final output, $5000\yr$ after the first sink forms.  
 Shown is a density projection of the minihalo environment on progressively smaller scales for both the $\ucr=0$ and $\ucr=10^5\,u_0$ simulations, as labeled.  
 White boxes indicate the region depicted on the next smaller scale.  
 From left to right: filamentary structure of the cosmic web near the minihalo formation site; minihalo formation at the intersection of several filaments; morphology within the $\sim$$100\pc$ virial radius of the minihalo. 
 The density scale for each level is shown just to the right -- note that the scaling changes from panel to panel.
-Note how the gas in the $\ucr=10^5\,u_0$ simulations appears smoothed out compared to the $\ucr=0$ simulations.  
-Not only do CRs heat and smooth the filamentary gas, the expedited collapse induced by CR ionization leaves less time for low-density structure to form, since the collapse is shifted to an earlier epoch.  
-As a result, the dynamical environment in which the sink particles form varies significantly between simulations.%
 }
 \end{center}
 \end{figure}
@@ -345,15 +351,6 @@ There are no apparent trends with increasing $\ucr$ -- neither in typical sink m
 \end{center}
 \end{figure}
 
-\subsubsection{Expedited Collapse}
-\label{sec:expedited_collapse}
-Boosting the $\htwo$ fraction in the gas lowers the density threshold for efficient cooling, allowing the gas to fulfill the Rees-Ostriker criterion sooner by driving the cooling time $t_{\mathrm  cool}$ below the freefall time $t_{\mathrm  ff}$ \citep{ReesOstriker1977}.
-This is demonstrated in Figure \ref{fig:efrac}, where we see the density at which the gas begins to cool drop as the CR background strength increases.  
-This necessarily expedites the subsequent phases of the collapse, as seen clearly in Figure \ref{crfig:collapse}, where we show the total gas mass within 1 pc (physical) of the minihalo's center as a function of redshift.  
-The impact this has on the environment in which the minihalo collapses is seen in Figure \ref{fig:structure}, where we show the final simulation output on various scales for Halo 1 and Halo 2, both in the absence of any CR background ($\ucr=0$) and with $\ucr=10^5\,u_0$. 
-Low density filamentary gas is heated and prevented from collapsing, reducing the clumping of the IGM and possibly impacting the early stages of reionization.
-Gas above a $\ucr$-dependent density threshold on the other hand experiences enhanced cooling and thus has its collapse expedited.
-As a result, the dynamical environment in which the first sink particles form varies significantly depending on the strength of the CR background.
 
 \begin{figure}
 \begin{center}
