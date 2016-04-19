@@ -317,27 +317,6 @@ the LW background in Pop~III star formation sites, this is likely not
 representative of the `average' LW background in the Universe (e.g.,
 \citealt{MachacekBryanAbel2001, MesingerBryanHaiman2006}).
 
-\begin{figure}
- \begin{center}
-   \includegraphics[width=\columnwidth]{lwFeedback}
-   \caption{a) the factor $f_{\textsc{lw}}$ by which
-     LW feedback increases the critical mass for star formation;
-     points show the results of the simulation, the red line our fit.
-     b) The critical mass for star formation in both simulations.
-     Blue crosses mark the critical mass for star formation in the
-     absence of LW feedback, red crosses in its presence.  The blue
-     line shows the best fit critical mass from \RefEq{mcriteq}, given
-     by a temperature of 2200 K; the red line the critical mass from
-     \RefEq{mcritlweq} for LW feedback using the fit for
-     $f_{\textsc{lw}}$ given in \RefEq{flweq}.  The green line marks
-     the halo mass corresponding to a virial temperature of $10^4\,$K,
-     and the black dashed line represents the critical mass employed,
-     accounting for atomic cooling in halos with virial temperatures
-     above $10^4\,$K.}
-   \label{lwFeedback}
- \end{center}
-\end{figure}
-
 We will describe our radiative feedback simulations in detail
 elsewhere, and present only a brief summary here.  We employ a set of
 two cosmological simulations using a modified version of the
@@ -396,6 +375,27 @@ mass in Simulation A is best fit by a critical virial temperature of
 2200 K, as shown in \RefFig{lwFeedback}b.  Note that this includes the
 effects of dynamical heating; gas in isolated halos would collapse and
 form stars at lower masses.
+
+\begin{figure}
+ \begin{center}
+   \includegraphics[width=\columnwidth]{lwFeedback}
+   \caption{a) the factor $f_{\textsc{lw}}$ by which
+     LW feedback increases the critical mass for star formation;
+     points show the results of the simulation, the red line our fit.
+     b) The critical mass for star formation in both simulations.
+     Blue crosses mark the critical mass for star formation in the
+     absence of LW feedback, red crosses in its presence.  The blue
+     line shows the best fit critical mass from \RefEq{mcriteq}, given
+     by a temperature of 2200 K; the red line the critical mass from
+     \RefEq{mcritlweq} for LW feedback using the fit for
+     $f_{\textsc{lw}}$ given in \RefEq{flweq}.  The green line marks
+     the halo mass corresponding to a virial temperature of $10^4\,$K,
+     and the black dashed line represents the critical mass employed,
+     accounting for atomic cooling in halos with virial temperatures
+     above $10^4\,$K.}
+   \label{lwFeedback}
+ \end{center}
+\end{figure}
 
 Determining the critical mass for star formation in the LW feedback
 simulation in the same manner as above, we can then determine
@@ -626,6 +626,25 @@ Note that our blackbody assumption breaks down at late times when the
 photosphere begins to recede into the ejecta.  This is manifested as
 an apparent decrease in the radius of the PISN remnant.
 
+With this information we can then calculate the specific flux
+$F_{\lambda, \mathrm em}$ in the rest frame and|accounting for redshift
+and cosmological dimming|in the observer's frame for a source at
+redshift $z$:
+\begin{equation}
+F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) = \pi
+\left[\frac{R_{\textsc{sn}}}{D_L(z)}\right]^2
+\frac{B_{\lambda'}(T)}{1+z}.
+\end{equation}
+Here $\lambda' = \lambda/(1+z)$ accounts for redshifting, and the
+luminosity distance $D_L = (1+z) r(z)$ accounts for cosmological
+dimming.  Convolving this spectrum with a filter function
+$\phi_\textsc{x}(\lambda)$ yields the observable flux in filter~X:
+\begin{equation}
+F_{\mathrm obs, \textsc{x}} = \int_{0}^{\infty} \phi_\textsc{x}(\lambda)
+F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) d\lambda.
+\end{equation}
+
+\subsection{Visibility}
 \begin{figure}
  \begin{center}
    \resizebox{15cm}{12cm}
@@ -650,25 +669,6 @@ an apparent decrease in the radius of the PISN remnant.
  \end{center}
 \end{figure} 
 
-With this information we can then calculate the specific flux
-$F_{\lambda, \mathrm em}$ in the rest frame and|accounting for redshift
-and cosmological dimming|in the observer's frame for a source at
-redshift $z$:
-\begin{equation}
-F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) = \pi
-\left[\frac{R_{\textsc{sn}}}{D_L(z)}\right]^2
-\frac{B_{\lambda'}(T)}{1+z}.
-\end{equation}
-Here $\lambda' = \lambda/(1+z)$ accounts for redshifting, and the
-luminosity distance $D_L = (1+z) r(z)$ accounts for cosmological
-dimming.  Convolving this spectrum with a filter function
-$\phi_\textsc{x}(\lambda)$ yields the observable flux in filter~X:
-\begin{equation}
-F_{\mathrm obs, \textsc{x}} = \int_{0}^{\infty} \phi_\textsc{x}(\lambda)
-F_{\lambda, \mathrm obs}(T,R_{\textsc{sn}}, z) d\lambda.
-\end{equation}
-
-\subsection{Visibility}
 The NIRCam instrument on the JWST will observe the early Universe
 through a number of narrow, medium-width, and wide
 filters\footnote{http://www.stsci.edu/jwst/instruments/nircam/instrument-design/filters}.
@@ -787,24 +787,6 @@ signature needed to identify PISNe.
 
 \section{Discussion and Conclusions}
 \label{pisn_conclusions} 
-\begin{figure}
-\begin{center}
-  \includegraphics[width=\columnwidth]{observability}
-  \caption{The observability of the R250, He100, B200,
-    and R175 models (clockwise from upper left) from
-    \citet{KasenWoosleyHeger2011} using the JWST's NIRcam F444W
-    filter. Shown is the possible range for the number of JWST FoVs
-    required to detect 10 sources as a function of exposure time. The
-    blue range is for all PISNe, and the red for PISNe
-    from $z>15$.  The lower boundaries correspond to the
-    no-feedback upper limit to the PISN rate and the upper boundaries to
-    the conservative feedback rate.  From left to right, the black
-    lines represent the number of pointings possible in a total of
-    $10^6$, $10^7$, and $10^8\,$s for a given exposure time.}
-  \label{observability}
-\end{center}
-\end{figure}
-
 In this work, we have examined the source density of PISNe from
 Pop~III stars and considered their detectability with the JWST. We
 conclude that the limiting factor in detecting PISNe will be the
@@ -836,6 +818,24 @@ to $z\sim25$; the problem is the overall scarcity of sources.
  metal lines in the spectrum at early times could provide a
  spectroscopic signature for identification.
 
+\begin{figure}
+\begin{center}
+  \includegraphics[width=\columnwidth]{observability}
+  \caption{The observability of the R250, He100, B200,
+    and R175 models (clockwise from upper left) from
+    \citet{KasenWoosleyHeger2011} using the JWST's NIRcam F444W
+    filter. Shown is the possible range for the number of JWST FoVs
+    required to detect 10 sources as a function of exposure time. The
+    blue range is for all PISNe, and the red for PISNe
+    from $z>15$.  The lower boundaries correspond to the
+    no-feedback upper limit to the PISN rate and the upper boundaries to
+    the conservative feedback rate.  From left to right, the black
+    lines represent the number of pointings possible in a total of
+    $10^6$, $10^7$, and $10^8\,$s for a given exposure time.}
+  \label{observability}
+\end{center}
+\end{figure}
+
 We find that the main obstacle to observing PISNe is the paucity of
 sources.  Beyond a moderate exposure time of a few times $10^4\,$s,
 the observability of bright PISNe is not a strong function of exposure
@@ -852,22 +852,6 @@ high-redshift sources ($z>15$; red) the dependence on exposure time is
 still minimal, being controlled by the lack of sources once the
 required imaging depth is reached.
 
-\begin{figure}
-\begin{center}
-  \includegraphics[width=\columnwidth]{area_observability_R250}
-  \caption{The total number of PISNe observable with a
-    campaign of $10^6$, $10^7$ and $10^8\,$s (from left to right) as a
-    function of survey area for the R250 PISN model.  In each case,
-    the total campaign time is apportioned equally over the total
-    survey area to determine the exposure time for individual
-    pointings.  The blue region represents all PISNe, the red only
-    PISNe from $z>15$.  Upper boundaries correspond to the no-feedback
-    upper limit to the PISN rate and lower boundaries to the
-    conservative feedback case. For reference we mark the case of only
-    one PISN visible (dashed line).}
- \label{area_obsR250}
-\end{center}
-\end{figure}  
 Of particular interest in \RefFig{observability} are the black lines
 representing the total number of pointings possible in $10^6$, $10^7$,
 and $10^8\,$s for a given exposure time and their location relative to
@@ -892,6 +876,22 @@ to the R250 and He100 models.  In this case, the strategy with the
 highest likelihood of detection will be a mosaic survey of many
 moderately deep exposures.  This is clear from \RefFig{area_obsR250},
 where we show the number of PISNe that will be observable with the
+\begin{figure}
+\begin{center}
+  \includegraphics[width=\columnwidth]{area_observability_R250}
+  \caption{The total number of PISNe observable with a
+    campaign of $10^6$, $10^7$ and $10^8\,$s (from left to right) as a
+    function of survey area for the R250 PISN model.  In each case,
+    the total campaign time is apportioned equally over the total
+    survey area to determine the exposure time for individual
+    pointings.  The blue region represents all PISNe, the red only
+    PISNe from $z>15$.  Upper boundaries correspond to the no-feedback
+    upper limit to the PISN rate and lower boundaries to the
+    conservative feedback case. For reference we mark the case of only
+    one PISN visible (dashed line).}
+ \label{area_obsR250}
+\end{center}
+\end{figure}  
 JWST in observing campaigns totaling $10^6$, $10^7$ and $10^8\,$s for
 the R250 PISN model. The exposure time for each pointing varies with
 the total area covered by the survey in order to keep the total
